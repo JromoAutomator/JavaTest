@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="10803" started-at="2019-08-01T20:30:11Z" finished-at="2019-08-01T20:30:22Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="10803" started-at="2019-08-01T20:30:11Z" finished-at="2019-08-01T20:30:22Z">
+      <class name="com.JavaSimpleTest.TestNG_java.NewTest">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.JavaSimpleTest.TestNG_java.NewTest@353d0772]" name="beforeClass" is-config="true" duration-ms="1857" started-at="2019-08-01T20:30:11Z" finished-at="2019-08-01T20:30:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="f()[pri:0, instance:com.JavaSimpleTest.TestNG_java.NewTest@353d0772]" name="f" duration-ms="8918" started-at="2019-08-01T20:30:13Z" finished-at="2019-08-01T20:30:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.JavaSimpleTest.TestNG_java.NewTest@353d0772]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-08-01T20:30:22Z" finished-at="2019-08-01T20:30:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.JavaSimpleTest.TestNG_java.NewTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
