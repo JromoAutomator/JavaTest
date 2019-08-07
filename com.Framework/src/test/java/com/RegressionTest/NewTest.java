@@ -2,7 +2,6 @@ package com.RegressionTest;
 
 import org.testng.annotations.Test;
 
-import com.Keywords.webElements_Keywords;
 import com.PageFactory.HomePage;
 
 import org.testng.annotations.BeforeClass;
@@ -20,13 +19,19 @@ public class NewTest {
 	  this.driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
   }
 	
-  @Test
+  @Test(groups = { "Regression" },priority=1,description="this is a Test to login into the application")
   public void userLogin() {
 	  HomePage LoginPage = new HomePage(this.driver,50);
 	  LoginPage.element_isVisible(LoginPage.txtEmail);
 	  LoginPage.textBox_EnterText(LoginPage.txtEmail, "j2558@gmail.com");
   }
  
+  @Test(groups = { "Regression" },priority=2,description="this is a Test to login into the application")
+  public void Homepage_Links() {
+	  HomePage LoginPage = new HomePage(this.driver,50);
+	  LoginPage.element_isVisible(LoginPage.txtEmail);
+	  LoginPage.textBox_EnterText(LoginPage.txtEmail, "j2558@gmail.com");
+  }
 
   @AfterClass
   public void afterClass() {
