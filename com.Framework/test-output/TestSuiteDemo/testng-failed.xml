@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="10" name="Failed suite [TestSuiteDemo]">
+  <test thread-count="5" verbose="10" name="test2(failed)">
+    <groups>
+      <run>
+        <include name="Regression"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.RegressionTest.NewTest">
+        <methods>
+          <include name="userLogin"/>
+          <include name="Homepage_Links"/>
+        </methods>
+      </class> <!-- com.RegressionTest.NewTest -->
+    </classes>
+  </test> <!-- test2(failed) -->
+</suite> <!-- Failed suite [TestSuiteDemo] -->
