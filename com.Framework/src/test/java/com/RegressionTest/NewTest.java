@@ -13,6 +13,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 
+
 public class NewTest {
 	private WebDriver chromeDriver;
 	private WebDriver firefoxDriver;
@@ -45,7 +46,7 @@ public class NewTest {
 	  LoginPage.textBox_EnterText(LoginPage.txtEmail, "j2558@gmail.com");
   }
   
-  @Test(groups = { "SmokeTest" },priority=1,description="this is a Test to login into the application",dataProvider = "getdata")
+  @Test(groups = { "SmokeTest" },priority=1,description="this is a Test to login into the application",dataProvider = "DataClass.GetdataSource")
   public void RunwithData(int index,String data) {
 		  System.out.println("index= "+index+" , data = "+data);	
   }

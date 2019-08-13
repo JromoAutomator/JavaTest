@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="sundance.NewTest">
+      <class name="com.mobile.MobileNewTest">
         <methods>
-          <include name="GetAppData"/>
-          <include name="afterTest"/>
           <include name="beforeTest"/>
+          <include name="f"/>
+          <include name="afterTest"/>
         </methods>
-      </class> <!-- sundance.NewTest -->
+      </class> <!-- com.mobile.MobileNewTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
