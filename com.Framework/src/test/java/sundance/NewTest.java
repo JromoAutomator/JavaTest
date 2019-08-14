@@ -46,9 +46,14 @@ public class NewTest {
 		  if(AppPage.element_isVisible(AppPage.chkSelectAll)) {
 			  String strTotalRows = AppPage.element_Getlabel(AppPage.lblTotalRows);
 			  int intTotalRows = Integer.parseInt(strTotalRows)/100;
+			  int remainrows = Integer.parseInt(strTotalRows)%100;
+			  System.out.println(remainrows);
 			  System.out.println(intTotalRows);
+			  if(remainrows>0) {
+				  intTotalRows++;
+			  }
 			  //start the loop here
-			  for (int i = 0; i < intTotalRows-1; i++) {
+			  for (int i = 0; i < intTotalRows; i++) {
 				  AppPage.element_GotoElement(AppPage.chkSelectAll, this.chromeDriver);
 				  Thread.sleep(2000);
 				  AppPage.button_Click(AppPage.chkSelectAll);
@@ -88,9 +93,6 @@ public class NewTest {
 	  }else {
 		  System.out.println("Something went wring with the login, ending test");
 	  }
-	  
-	  
-	  
   }
   
   
@@ -100,10 +102,9 @@ public class NewTest {
 		  System.setProperty("webdriver.chrome.driver", "Path to .exe");
 		  System.out.println("Running on Windows..");
 	  }
-	  
 	  this.chromeDriver = new ChromeDriver();
 	  this.chromeDriver.manage().window().maximize();
-	  this.chromeDriver.get("http://applications4.sundance.org");
+	  this.chromeDriver.get("http://applications.sundance.org");
   }
   
 
@@ -121,6 +122,7 @@ public class NewTest {
   
   
   public String waitfordownload(WebDriver driver) throws InterruptedException {
+	  int x=0;
       String mainWindow = driver.getWindowHandle();
       JavascriptExecutor js = (JavascriptExecutor)driver;
       js.executeScript("window.open()");
@@ -131,24 +133,18 @@ public class NewTest {
 
       JavascriptExecutor js1 = (JavascriptExecutor)driver;
       Long percentage = (long) 0;
-      while ( percentage!= 100) {
+      while (percentage!= 100 && x<=5) {
           try {
               percentage = (Long) js1.executeScript("return document.querySelector('downloads-manager').shadowRoot.querySelector('#downloadsList downloads-item').shadowRoot.querySelector('#progress').value");
           }catch (Exception e) {
         }
           Thread.sleep(1000);
+          if(percentage==0) {
+        	  x++;
+          }
       }
       String fileName = (String) js1.executeScript("return document.querySelector('downloads-manager').shadowRoot.querySelector('#downloadsList downloads-item').shadowRoot.querySelector('div#content #file-link').text");
-      String sourceURL = (String) js1.executeScript("return document.querySelector('downloads-manager').shadowRoot.querySelector('#downloadsList downloads-item').shadowRoot.querySelector('div#content #file-link').href");
-      String donwloadedAt = (String) js1.executeScript("return document.querySelector('downloads-manager').shadowRoot.querySelector('#downloadsList downloads-item').shadowRoot.querySelector('div.is-active.focus-row-active #file-icon-wrapper img').src");
-      //System.out.println("Download deatils");
       System.out.println("File Name :-" + fileName);
-      //System.out.println("Donwloaded path :- " + donwloadedAt);
-      //System.out.println("Downloaded from url :- " + sourceURL);
-     // print the details
-      //System.out.println(fileName);
-      //System.out.println(sourceURL);
-     // close the downloads tab2
       driver.close();
      // switch back to main window
       driver.switchTo().window(mainWindow);
@@ -157,9 +153,8 @@ public class NewTest {
   
   
   public String unzipFile(String source) {
-	  String destFolder = source.replace(".zip", "");
 	  String downloadfolder="/Users/jesusromollamas/Downloads/";
-	  String destination = "/Users/jesusromollamas/Desktop/Files/"+destFolder;   
+	  String destination = "/Users/jesusromollamas/Desktop/Files/";   
 
 	  try {
 	      ZipFile zipFile = new ZipFile(downloadfolder+source);
