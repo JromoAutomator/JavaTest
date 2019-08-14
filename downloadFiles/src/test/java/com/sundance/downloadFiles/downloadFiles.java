@@ -120,14 +120,14 @@ public class downloadFiles {
 	      Long percentage = (long) 0;
 	      while (percentage!= 100) {
 	          try {
+	        	  try {Thread.sleep(2000);} catch (InterruptedException e) {e.printStackTrace();}
 	              percentage = (Long) js1.executeScript("return document.querySelector('downloads-manager').shadowRoot.querySelector('#downloadsList downloads-item').shadowRoot.querySelector('#progress').value");
 	          }catch (Exception e) {
 	        	  try {Thread.sleep(3000);} catch (InterruptedException ex) {ex.printStackTrace();}
 	        	  percentage=(long) 100;
 	        	  
 	        }
-	          try {Thread.sleep(1000);} catch (InterruptedException e) {e.printStackTrace();
-			}
+	          try {Thread.sleep(1000);} catch (InterruptedException e) {e.printStackTrace();}
 	      }
 	      String fileName = (String) js1.executeScript("return document.querySelector('downloads-manager').shadowRoot.querySelector('#downloadsList downloads-item').shadowRoot.querySelector('div#content #file-link').text");
 	      System.out.println("File Name :-" + fileName);
