@@ -1,5 +1,6 @@
 package com.sundance.downloadFiles;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import org.openqa.selenium.JavascriptExecutor;
@@ -20,7 +21,7 @@ public class downloadFilesTest {
 	private WebDriver chromeDriver;
 	private String zipFileName;
 	private String unzipFile;
-	private String Chromepath;
+	private String Chromepath="/drivers/chromedriver.exe";
 	private int PageObjectTiemOut=30;
 	private String App="http://applications.sundance.org";
 	private String ApplicationData="2019_New_Frontier_Story_Lab";
@@ -33,6 +34,7 @@ public class downloadFilesTest {
   @Test
   public void f() {
 	  downloadFilesTest filesApp= new downloadFilesTest();
+	  System.out.println(filesApp.Chromepath);
 		
 		if(!System.getProperty("os.name").equals("Mac OS X")){
 			  System.setProperty("webdriver.chrome.driver", filesApp.Chromepath);
