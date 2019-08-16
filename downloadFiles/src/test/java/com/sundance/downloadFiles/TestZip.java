@@ -35,9 +35,15 @@ public class TestZip {
 	}
 	
 	
-	public void unzipFile3(String source) throws IOException {
-		ZipFile zipFile = new ZipFile(downloadfolder+source);
+	@SuppressWarnings("deprecation")
+	public void unzipFile3(String source) {
+		ZipFile zipFile=null;
 		try {
+			zipFile = new ZipFile(downloadfolder+source);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		//try {
 		  Enumeration<? extends ZipEntry> entries = zipFile.entries();
 		  while (entries.hasMoreElements()) {
 		    ZipEntry entry = entries.nextElement();
@@ -45,20 +51,28 @@ public class TestZip {
 		    if (entry.isDirectory()) {
 		        entryDestination.mkdirs();
 		    } else {
-		        entryDestination.getParentFile().mkdirs();
-		        InputStream in = zipFile.getInputStream(entry);
-		        OutputStream out = new FileOutputStream(entryDestination);
-		        IOUtils.copy(in, out);
-		        IOUtils.closeQuietly(in);
-		        out.close();
+		    	try {
+			        entryDestination.getParentFile().mkdirs();
+			        InputStream in = zipFile.getInputStream(entry);
+			        OutputStream out = new FileOutputStream(entryDestination);
+			        IOUtils.copy(in, out);
+			        IOUtils.closeQuietly(in);
+			        out.close();
+		    	}catch(Exception e) {
+					System.out.println("Error on File "+source);
+				}
 		    }
 		  }
 		  System.out.println("Done File "+source);
-		}catch(Exception e) {
-			e.printStackTrace();
-		} finally {
-		  zipFile.close();
-		}
+		//}catch(Exception e) {
+		//	e.printStackTrace();
+		//} finally {
+		  try {
+			  zipFile.close();
+		  }catch(Exception e) {
+				e.printStackTrace();
+			}
+		//}
 	}
 
 }
