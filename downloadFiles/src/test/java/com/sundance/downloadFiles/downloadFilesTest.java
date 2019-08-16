@@ -21,7 +21,7 @@ public class downloadFilesTest {
 	private WebDriver chromeDriver;
 	private String zipFileName;
 	private String unzipFile;
-	private String Chromepath="/drivers/chromedriver.exe";
+	private String Chromepath="./drivers/chromedriver.exe";
 	private int PageObjectTiemOut=30;
 	private String App="http://applications.sundance.org";
 	private String ApplicationData="2019_New_Frontier_Story_Lab";
