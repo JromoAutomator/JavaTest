@@ -1,36 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="2" failed="1" ignored="0" total="3" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="70843" started-at="2019-08-14T15:11:54Z" finished-at="2019-08-14T15:13:05Z">
+  <suite name="Default suite" duration-ms="22605" started-at="2019-08-19T21:44:07Z" finished-at="2019-08-19T21:44:30Z">
     <groups>
+      <group name="SmokeTest">
+        <method signature="NewTest.RunwithData(int, java.lang.String)[pri:1, instance:com.RegressionTest.NewTest@71809907]" name="RunwithData" class="com.RegressionTest.NewTest"/>
+      </group> <!-- SmokeTest -->
+      <group name="Regression">
+        <method signature="NewTest.Homepage_Links()[pri:2, instance:com.RegressionTest.NewTest@71809907]" name="Homepage_Links" class="com.RegressionTest.NewTest"/>
+        <method signature="NewTest.userLogin()[pri:2, instance:com.RegressionTest.NewTest@71809907]" name="userLogin" class="com.RegressionTest.NewTest"/>
+      </group> <!-- Regression -->
     </groups>
-    <test name="Default test" duration-ms="70843" started-at="2019-08-14T15:11:54Z" finished-at="2019-08-14T15:13:05Z">
-      <class name="sundance.NewTest">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:sundance.NewTest@5223e5ee]" name="beforeTest" is-config="true" duration-ms="3580" started-at="2019-08-14T15:11:54Z" finished-at="2019-08-14T15:11:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="FAIL" signature="GetAppData()[pri:0, instance:sundance.NewTest@5223e5ee]" name="GetAppData" duration-ms="57102" started-at="2019-08-14T15:11:57Z" finished-at="2019-08-14T15:12:54Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[Timed out after 50 seconds. Unable to locate the element]]>
-            </message>
+    <test name="Default test" duration-ms="22605" started-at="2019-08-19T21:44:07Z" finished-at="2019-08-19T21:44:30Z">
+      <class name="com.RegressionTest.NewTest">
+        <test-method status="FAIL" signature="beforeSuite()[pri:0, instance:com.RegressionTest.NewTest@71809907]" name="beforeSuite" is-config="true" duration-ms="22441" started-at="2019-08-19T21:44:07Z" finished-at="2019-08-19T21:44:29Z">
+          <exception class="java.lang.NullPointerException">
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Timed out after 50 seconds. Unable to locate the element
-at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:99)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy9.click(Unknown Source)
-at com.Keywords.webElements_Keywords.button_Click(webElements_Keywords.java:12)
-at sundance.NewTest.GetAppData(NewTest.java:45)
+              <![CDATA[java.lang.NullPointerException
+at com.RegressionTest.NewTest.beforeSuite(NewTest.java:28)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.lang.reflect.Method.invoke(Method.java:498)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+at org.testng.TestRunner.beforeRun(TestRunner.java:529)
+at org.testng.TestRunner.run(TestRunner.java:497)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="SKIP" signature="beforeSuite2()[pri:0, instance:com.RegressionTest.NewTest@71809907]" name="beforeSuite2" is-config="true" duration-ms="0" started-at="2019-08-19T21:44:29Z" finished-at="2019-08-19T21:44:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite2 -->
+        <test-method status="FAIL" signature="RunwithData(int, java.lang.String)[pri:1, instance:com.RegressionTest.NewTest@71809907]" name="RunwithData" duration-ms="0" started-at="2019-08-19T21:44:30Z" description="this is a Test to login into the application" data-provider="DataClass.GetdataSource" finished-at="2019-08-19T21:44:30Z">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Method public void com.RegressionTest.NewTest.RunwithData(int,java.lang.String) requires a @DataProvider named : DataClass.GetdataSource]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Method public void com.RegressionTest.NewTest.RunwithData(int,java.lang.String) requires a @DataProvider named : DataClass.GetdataSource
+at org.testng.internal.Parameters.findDataProvider(Parameters.java:513)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:691)
+at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:49)
+at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:37)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:924)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
 at org.testng.TestRunner.privateRun(TestRunner.java:648)
@@ -48,52 +84,17 @@ at org.testng.TestNG.run(TestNG.java:1017)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='manage-pane']/div[3]/ul/li[23]/a[@title='DFP_Applicants']"}
-  (Session info: chrome=76.0.3809.87)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Itexicos-MacBook-Pro.local', ip: 'fe80:0:0:0:48:a945:2783:e5bc%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '1.8.0_221'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.87, chrome: {chromedriverVersion: 76.0.3809.68 (420c9498db8ce..., userDataDir: /var/folders/yp/p4t04w2561s...}, goog:chromeOptions: {debuggerAddress: localhost:56045}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: a33084925327645ef7dc3fcd65f5b398
-*** Element info: {Using=xpath, value=//*[@id='manage-pane']/div[3]/ul/li[23]/a[@title='DFP_Applicants']}
-at sun.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:39)
-at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:165)
-at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:72)
-at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:95)
-... 29 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.testng.TestNGException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- GetAppData -->
-        <test-method status="FAIL" signature="afterTest()[pri:0, instance:sundance.NewTest@5223e5ee]" name="afterTest" is-config="true" duration-ms="10137" started-at="2019-08-14T15:12:54Z" finished-at="2019-08-14T15:13:05Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[Timed out after 10 seconds. Unable to locate the element]]>
-            </message>
+        </test-method> <!-- RunwithData -->
+        <test-method status="SKIP" signature="Homepage_Links()[pri:2, instance:com.RegressionTest.NewTest@71809907]" name="Homepage_Links" duration-ms="0" started-at="2019-08-19T21:44:30Z" description="this is a Test to login into the application" finished-at="2019-08-19T21:44:30Z">
+          <exception class="java.lang.NullPointerException">
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Timed out after 10 seconds. Unable to locate the element
-at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:99)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy9.click(Unknown Source)
-at com.Keywords.webElements_Keywords.button_Click(webElements_Keywords.java:12)
-at sundance.NewTest.afterTest(NewTest.java:113)
+              <![CDATA[java.lang.NullPointerException
+at com.RegressionTest.NewTest.beforeSuite(NewTest.java:28)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -103,8 +104,8 @@ at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(Met
 at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
 at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
 at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
-at org.testng.TestRunner.afterRun(TestRunner.java:725)
-at org.testng.TestRunner.run(TestRunner.java:509)
+at org.testng.TestRunner.beforeRun(TestRunner.java:529)
+at org.testng.TestRunner.run(TestRunner.java:497)
 at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
 at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
 at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
@@ -118,42 +119,56 @@ at org.testng.TestNG.run(TestNG.java:1017)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression //*[@id=‘container']/div[1]/div/div/ul[2]/li[3]/a because of the following error:
-SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//*[@id=‘container']/div[1]/div/div/ul[2]/li[3]/a' is not a valid XPath expression.
-  (Session info: chrome=76.0.3809.87)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Itexicos-MacBook-Pro.local', ip: 'fe80:0:0:0:48:a945:2783:e5bc%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '1.8.0_221'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.87, chrome: {chromedriverVersion: 76.0.3809.68 (420c9498db8ce..., userDataDir: /var/folders/yp/p4t04w2561s...}, goog:chromeOptions: {debuggerAddress: localhost:56045}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: a33084925327645ef7dc3fcd65f5b398
-*** Element info: {Using=xpath, value=//*[@id=‘container']/div[1]/div/div/ul[2]/li[3]/a}
-at sun.reflect.GeneratedConstructorAccessor13.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:39)
-at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:165)
-at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:72)
-at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:95)
-... 28 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- sundance.NewTest -->
+        </test-method> <!-- Homepage_Links -->
+        <test-method status="SKIP" signature="userLogin()[pri:2, instance:com.RegressionTest.NewTest@71809907]" name="userLogin" duration-ms="0" started-at="2019-08-19T21:44:30Z" description="this is a Test to login into the application" finished-at="2019-08-19T21:44:30Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+at com.RegressionTest.NewTest.beforeSuite(NewTest.java:28)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+at org.testng.TestRunner.beforeRun(TestRunner.java:529)
+at org.testng.TestRunner.run(TestRunner.java:497)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userLogin -->
+        <test-method status="SKIP" signature="afterSuite()[pri:0, instance:com.RegressionTest.NewTest@71809907]" name="afterSuite" is-config="true" duration-ms="0" started-at="2019-08-19T21:44:30Z" finished-at="2019-08-19T21:44:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+        <test-method status="SKIP" signature="afterSuite2()[pri:0, instance:com.RegressionTest.NewTest@71809907]" name="afterSuite2" is-config="true" duration-ms="0" started-at="2019-08-19T21:44:30Z" finished-at="2019-08-19T21:44:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite2 -->
+      </class> <!-- com.RegressionTest.NewTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

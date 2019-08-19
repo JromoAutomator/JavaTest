@@ -2,6 +2,8 @@ package com.RegressionTest;
 
 import org.testng.annotations.Test;
 
+import com.Keywords.Enums;
+import com.Keywords.java_Utils;
 import com.PageFactory.HomePage;
 
 import org.testng.annotations.BeforeClass;
@@ -17,16 +19,23 @@ import org.testng.annotations.AfterClass;
 public class NewTest {
 	private WebDriver chromeDriver;
 	private WebDriver firefoxDriver;
+	private Enums.Browser myBrowser = Enums.Browser.CHROME;
+	private java_Utils java_u = new java_Utils();
 
   @BeforeTest(groups = { "Regression" })
   public void beforeSuite() {
-	  this.chromeDriver = new ChromeDriver();
+	  this.chromeDriver = java_u.GetOS(myBrowser);
 	  this.chromeDriver.manage().window().maximize();
 	  this.chromeDriver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
   }
   
   @BeforeTest(groups = { "SmokeTest" })
   public void beforeSuite2() {
+	  System.out.println(System.getProperty("os.name"));
+	  if(!System.getProperty("os.name").equals("Mac OS X")){
+		  System.setProperty("webdriver.gecko.driver", "Path to .exe");
+		  System.out.println("Running on Windows..");
+	  }
 	  this.firefoxDriver = new FirefoxDriver();
 	  this.firefoxDriver.manage().window().maximize();
 	  this.firefoxDriver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
