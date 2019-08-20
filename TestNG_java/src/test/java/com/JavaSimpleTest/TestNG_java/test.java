@@ -4,7 +4,7 @@ public class test {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+		System.out.println("message");
 		int[] myarray = {10,83,1,25,4,5};
 
 		int nextvalue=0;
